@@ -18,7 +18,7 @@ func getObjects() []SpaceObject {
 }
 
 func main() {
-	rl.InitWindow(screenWidth, screenHeight, "Orbit Simulation in Go")
+	rl.InitWindow(screenWidth+200, screenHeight, "Orbit Simulation in Go")
 	defer rl.CloseWindow()
 
 	rl.SetTargetFPS(60)
@@ -34,6 +34,7 @@ func main() {
 		rl.ClearBackground(rl.Black)
 		drawSystem(localsystem)
 		doStuff(&localsystem)
+		drawUI()
 
 		rl.EndDrawing()
 	}
